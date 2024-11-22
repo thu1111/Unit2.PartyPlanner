@@ -75,7 +75,7 @@ async function addParty(event) {
     description: form.partyDescription.value,
   }
 
-  form.reset();
+  form.reset(); //clear form after submit
   // console.log(partyInfo);
   
   await createParty(partyInfo);
