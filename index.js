@@ -23,6 +23,7 @@ async function getParties() {
     const json = await response.json();
     state.parties = json.data;
     //console.log(json.data);
+
   } catch (error) {
     console.error(error);
   }
@@ -51,9 +52,7 @@ function renderParties() {
     deleteBtn.textContent = "Delete party";
     card.append(deleteBtn);
 
-    deleteBtn.addEventListener("click", () => {
-      deleteParty(party.id);
-    });
+    deleteBtn.addEventListener("click", () => {deleteParty(party.id)});
 
     return card;
   });
@@ -91,8 +90,10 @@ async function createParty(partyInfo) {
     if (!response.ok) {
       throw new Error("Cannot create party!");
     }
+
     const json = await response.json();
     // console.log(json);
+
     render();
   } catch (error) {
     console.error(error);
@@ -108,6 +109,7 @@ async function deleteParty(id) {
     if (!response.ok) {
       throw new Error("Party can't be deleted!");
     }
+
     render();
   } catch (error) {
     console.error(error);
@@ -125,6 +127,7 @@ async function updateParty(id, partyInfo) {
     if (!response.ok) {
       throw new Error("Party can't be updated!");
     }
+    
     const json = await response.json();
     // console.log(json);
 
