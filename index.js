@@ -84,7 +84,7 @@ async function createParty(partyInfo) {
   try {
     const response = await fetch(API_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {"Content-Type":"application/json"},
       body: JSON.stringify(partyInfo),
     });
     if (!response.ok) {
@@ -121,13 +121,13 @@ async function updateParty(id, partyInfo) {
   try {
     const response = await fetch(`${API_URL}/${id}`, {
       method: "PUT",
-      headers: { "Contnet-Type": "application/json" },
+      headers: {"Content-Type":"application/json"},
       body: JSON.stringify(partyInfo),
     });
     if (!response.ok) {
       throw new Error("Party can't be updated!");
     }
-    
+
     const json = await response.json();
     // console.log(json);
 
