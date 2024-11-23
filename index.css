@@ -28,7 +28,7 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
-.deleteBtnClass {
+.deleteBtn {
   margin-top: 10px;
   padding: 10px;
   font-size: 0.9em;
@@ -40,6 +40,6 @@ body {
   cursor: pointer;
 }
 
-.deleteBtnClass:hover {
+.deleteBtn:hover {
   background-color: #ff2c36;
 }
